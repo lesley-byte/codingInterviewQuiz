@@ -94,17 +94,17 @@ div_actions.setAttribute(
 );
 h1.setAttribute(
   "style",
-  "text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  "text-align:left; width: 100%; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
 );
 // using .setAttribute() to add style to the section element
 section.setAttribute(
   "style",
-  "text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  "width: 50%; border-bottom: lightgrey 2px solid;margin-bottom: 10px; padding-bottom:10px; text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif; display: flex; flex-direction: column; justify-content: center; align-items: center;"
 );
 // using .setAttribute() to add style to the form element
 form.setAttribute(
   "style",
-  "text-align:center; display:flex; flex-direction:column; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  "text-align:center; width:100%; display:flex; flex-direction:column; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
 );
 // using .setAttribute() to add style to the input element
 input.setAttribute(
@@ -115,7 +115,7 @@ input.setAttribute(
 document.querySelectorAll(".btn").forEach((btn) => {
   btn.setAttribute(
     "style",
-    "background-color:purple; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;"
+    "background-color:purple; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;padding: 0px 10px; width: fit-content;"
   );
 });
 //use .setAttribute() to hide button4
