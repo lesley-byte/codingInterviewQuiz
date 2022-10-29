@@ -5,7 +5,7 @@ var div_actions = document.createElement("div");
 var h4 = document.createElement("h4");
 // using document.createElement() to create another h4 element to put in the header
 var h4_2 = document.createElement("button");
-var h4_3 = document.createElement("h4");
+var h4_3 = document.createElement("button");
 // using document.createElement() to create a h1 element
 var h1 = document.createElement("h1");
 var startButton = document.createElement("button");
@@ -217,7 +217,10 @@ function styleFirstPage() {
 function styleSecondPage() {
   mode = "second";
   h1.textContent = "Save your score";
-  h4_3.setAttribute("style", "display:visible");
+  h4_3.setAttribute(
+    "style",
+    "background-color:white; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif;"
+  );
   // use .setAttribute() to show the input element
   input.setAttribute("style", "display:visible");
   // use .setAttribute() to show the button4 element
