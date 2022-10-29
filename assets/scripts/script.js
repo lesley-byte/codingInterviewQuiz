@@ -1,6 +1,6 @@
 // this is where I will put my code
 // using document.createElement() to create a header
-var header = document.createElement("header");
+var div_actions = document.createElement("div");
 // using document.createElement() to create a h4 element to put in the header
 var h4 = document.createElement("h4");
 // using document.createElement() to create another h4 element to put in the header
@@ -44,11 +44,10 @@ button3.setAttribute("id", "button3");
 // using .setAttribute() to add an id to the button4 element
 button4.setAttribute("id", "button4");
 //using .appendChile to add the header element to the body element
-document.body.appendChild(header);
-// using .appendChild() to add the h4 element to the header element
-document.body.appendChild(h4);
-// using .appendChild() to add the h4_2 element to the header element
-document.body.appendChild(h4_2);
+document.body.appendChild(div_actions);
+// using .appendChild() to add the h4 element to the div_actions element
+div_actions.appendChild(h4);
+div_actions.appendChild(h4_2);
 
 // using .appendChild() to add the section to the body element
 document.body.appendChild(section);
@@ -58,6 +57,8 @@ section.appendChild(h1);
 section.appendChild(form);
 // using .appendChild() to add the input to the form element
 form.appendChild(input);
+// using .appendChild() to add the button4 to the form element
+form.appendChild(button4);
 // using .appendChild() to add the button to the form element
 form.appendChild(button);
 // using .appendChild() to add the button1 to the form element
@@ -66,8 +67,7 @@ form.appendChild(button1);
 form.appendChild(button2);
 // using .appendChild() to add the button3 to the form element
 form.appendChild(button3);
-// using .appendChild() to add the button4 to the form element
-form.appendChild(button4);
+
 // using .textContent to add text to the button element
 // using .textContent to add text to the link element in the header
 
@@ -88,20 +88,23 @@ button3.textContent = "Question 4";
 button4.textContent = "Save";
 
 // using .setAttribute() to add style to the h1 element
-
+div_actions.setAttribute(
+  "style",
+  "display:flex; background-color: white; color: black; padding: 20px; text-align: center; flex-direction: row-reverse; width: 95%; justify-content: space-between; margin: 0 auto; border-radius: 5px; margin-bottom: 20px;"
+);
 h1.setAttribute(
   "style",
-  "text-align:center; color:blue; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  "text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
 );
 // using .setAttribute() to add style to the section element
 section.setAttribute(
   "style",
-  "text-align:center; color:blue; font-size: 50px; font-family: 'Times New Roman', Times, serif; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  "text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif; display: flex; flex-direction: column; justify-content: center; align-items: center;"
 );
 // using .setAttribute() to add style to the form element
 form.setAttribute(
   "style",
-  "text-align:center; color:blue; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  "text-align:center; display:flex; flex-direction:column; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
 );
 // using .setAttribute() to add style to the input element
 input.setAttribute(
@@ -112,12 +115,15 @@ input.setAttribute(
 document.querySelectorAll(".btn").forEach((btn) => {
   btn.setAttribute(
     "style",
-    "background-color:purple; color:white; border-radius:5px; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+    "background-color:purple; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;"
   );
 });
-
+//use .setAttribute() to hide button4
+button4.setAttribute("style", "display:none");
+// use .setAttribute() to hide the input element
+input.setAttribute("style", "display:none");
 // using .setAttribute() to add style to the body element
 document.body.setAttribute(
   "style",
-  "background-color:white; display:flex; flex-direction:row; justify-content:center; align-items:center;"
+  "background-color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;"
 );
