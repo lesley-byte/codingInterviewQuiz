@@ -20,9 +20,69 @@ var button1 = document.createElement("button");
 var button2 = document.createElement("button");
 var button3 = document.createElement("button");
 var button4 = document.createElement("button");
+
+// using object to store the questions and their 4 possible answers as well as which answers are corrent and which are wrong
+var questions = [
+  {
+    question: "What is the capital of France?",
+    answers: {
+      Paris: "Right!",
+      London: "Wrong!",
+      Berlin: "Wrong!",
+      Rome: "Wrong!",
+    },
+  },
+  {
+    question: "What is the capital of Germany?",
+    answers: {
+      Paris: "Wrong!",
+      London: "Wrong!",
+      Berlin: "Right!",
+      Rome: "Wrong!",
+    },
+  },
+  {
+    question: "What is the capital of Italy?",
+    answers: {
+      Paris: "Wrong!",
+      London: "Wrong!",
+      Berlin: "Wrong!",
+      Rome: "Right!",
+    },
+  },
+  {
+    question: "What is the capital of England?",
+    answers: {
+      Paris: "Wrong!",
+      London: "Right!",
+      Berlin: "Wrong!",
+      Rome: "Wrong!",
+    },
+  },
+];
+console.log(questions[0].question);
+console.log(Object.keys(questions[0].answers)[0]);
+console.log(questions[0].answers.Paris);
+//console.log how many questions are in the questions array
+console.log(questions.length);
+// create a function that loops through the questions array and displays the questions and their answers one at a time
+// function displayQuestions() {
+//   // create a for loop that loops through the questions array
+//   for (var i = 0; i < questions.length; i++) {
+//     // create a variable that stores the current question
+//     var currentQuestion = questions[i];
+//     // create a variable that stores the current question's answers
+//     var currentAnswers = currentQuestion.answers;
+//     // create a variable that stores the current question's answers as an array
+//     var currentAnswersArray = Object.keys(currentAnswers);
+//     // console.log the current question on one line and the current question's answers on the next line
+//     console.log(currentQuestion.question);
+//     console.log(currentAnswersArray);
+//   }
+// }
+// displayQuestions();
 // using document.createElement() to create a ul element
 // using .textContent to add text to the h1 element
-h1.textContent = "Quiz";
 document.body.appendChild(div_actions);
 // using .appendChild() to add the h4 element to the div_actions element
 div_actions.appendChild(h4);
@@ -57,14 +117,20 @@ h4.textContent = "Timer: 0";
 h4_2.textContent = "High Scores";
 h4_3.textContent = "Back";
 
-button.textContent = "Question 1";
-// using .textContent to add text to the button1 element
-button1.textContent = "Question 2";
-// using .textContent to add text to the button2 element
-button2.textContent = "Question 3";
-// using .textContent to add text to the button3 element
-button3.textContent = "Question 4";
+// button.textContent = "Question 1";
+// // using .textContent to add text to the button1 element
+// button1.textContent = "Question 2";
+// // using .textContent to add text to the button2 element
+// button2.textContent = "Question 3";
+// // using .textContent to add text to the button3 element
+// button3.textContent = "Question 4";
+// set the text content of button, button1, button2, button3 to the first answer, second answer, third answer, fourth answer of a randomly selected question from the questions array
+// set the text content of button, button1, button2, button3 to the first answer, second answer, third answer, fourth answer of a randomly selected question from the questions array
 
+button.textContent = Object.keys(questions[0].answers)[0];
+button1.textContent = Object.keys(questions[0].answers)[1];
+button2.textContent = Object.keys(questions[0].answers)[2];
+button3.textContent = Object.keys(questions[0].answers)[3];
 // using .textContent to add text to the button4 element
 button4.textContent = "Save";
 
@@ -97,6 +163,7 @@ function styleFirstPage() {
     "style",
     "display:flex; background-color: white; color: black; padding: 20px; text-align: center; flex-direction: row-reverse; width: 95%; justify-content: space-between; margin: 0 auto; border-radius: 5px; margin-bottom: 20px;"
   );
+  h1.textContent = "Quiz";
   h1.setAttribute(
     "style",
     "text-align:left; width: 100%; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
@@ -135,10 +202,13 @@ function styleFirstPage() {
     "style",
     "background-color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;"
   );
+
+  //add an event listener to button, button1, button2, button3 to display the value of the answer key of the question object in the console
 }
 
 function styleSecondPage() {
   mode = "second";
+  h1.textContent = "Quiz";
   h4_3.setAttribute("style", "display:visible");
   // use .setAttribute() to show the input element
   input.setAttribute("style", "display:visible");
@@ -158,6 +228,29 @@ function styleSecondPage() {
 
 function styleTitlePage() {
   mode = "title";
+  document.body.setAttribute(
+    "style",
+    "background-color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;"
+  );
+  div_actions.setAttribute(
+    "style",
+    "display:flex; background-color: white; color: black; padding: 20px; text-align: center; flex-direction: row-reverse; width: 95%; justify-content: space-between; margin: 0 auto; border-radius: 5px; margin-bottom: 20px;"
+  );
+  h1.textContent = "Coding Quiz Challenge";
+  h1.setAttribute(
+    "style",
+    "text-align:center; width: 100%; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  );
+  // using .setAttribute() to add style to the section element
+  section.setAttribute(
+    "style",
+    "width: 50%; border-bottom: lightgrey 2px solid;margin-bottom: 10px; padding-bottom:10px; text-align:center; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  );
+  form.setAttribute(
+    "style",
+    "text-align:center; width:100%; display:flex; flex-direction:column; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
+  );
+
   //hide evertthing except h1
   // use .setAttribute() to hide the input element
   input.setAttribute("style", "display:none");
@@ -177,18 +270,21 @@ function styleTitlePage() {
   h4_2.textContent = "View High Scores";
   // use .setAttribute() to change the text of the h4 element to "Coding Quiz Challenge"
   h4.textContent = "Coding Quiz Challenge";
-  h1.addEventListener("click", function () {
+  h1.addEventListener("click", function (event) {
+    event.stopPropagation();
     styleFirstPage();
   });
 }
 //----------------------------------------------------------------------------------------------------------------
 // if h4_2 is clicked, hide all elements except the input and button4
-h4_3.addEventListener("click", function () {
+h4_3.addEventListener("click", function (event) {
+  event.stopPropagation();
   styleTitlePage();
 });
 
-h4_2.addEventListener("click", function () {
+h4_2.addEventListener("click", function (event) {
   styleSecondPage();
+  event.stopPropagation();
   // if h4_2 is clicked again, show all elements except the input and button4
 });
 styleTitlePage();
