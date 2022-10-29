@@ -115,7 +115,7 @@ input.setAttribute(
 document.querySelectorAll(".btn").forEach((btn) => {
   btn.setAttribute(
     "style",
-    "background-color:purple; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;padding: 0px 10px; width: fit-content;"
+    "background-color:#5e3d92; border: #5e3d92 1px solid; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;padding: 0px 10px; width: fit-content;"
   );
 });
 //use .setAttribute() to hide button4
