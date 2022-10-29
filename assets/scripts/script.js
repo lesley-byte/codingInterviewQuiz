@@ -4,10 +4,11 @@ var div_actions = document.createElement("div");
 // using document.createElement() to create a h4 element to put in the header
 var h4 = document.createElement("h4");
 // using document.createElement() to create another h4 element to put in the header
-var h4_2 = document.createElement("h4");
+var h4_2 = document.createElement("button");
 var h4_3 = document.createElement("h4");
 // using document.createElement() to create a h1 element
 var h1 = document.createElement("h1");
+var startButton = document.createElement("button");
 // using document.createElement() to create a section element
 var section = document.createElement("section");
 // using document.createElement() to create a form element
@@ -15,7 +16,7 @@ var form = document.createElement("form");
 // using document.createElement() to create a input element
 var input = document.createElement("input");
 // using document.createElement() to create  5 button elements
-var button = document.createElement("button");
+var button0 = document.createElement("button");
 var button1 = document.createElement("button");
 var button2 = document.createElement("button");
 var button3 = document.createElement("button");
@@ -93,6 +94,7 @@ div_actions.appendChild(h4_3);
 document.body.appendChild(section);
 // using .appendChild() to add the h1 to the body element
 section.appendChild(h1);
+section.appendChild(startButton);
 // using .appendChild() to add the form to the section element
 section.appendChild(form);
 // using .appendChild() to add the input to the form element
@@ -100,7 +102,7 @@ form.appendChild(input);
 // using .appendChild() to add the button4 to the form element
 form.appendChild(button4);
 // using .appendChild() to add the button to the form element
-form.appendChild(button);
+form.appendChild(button0);
 // using .appendChild() to add the button1 to the form element
 form.appendChild(button1);
 // using .appendChild() to add the button2 to the form element
@@ -115,6 +117,7 @@ form.appendChild(button3);
 h4.textContent = "Timer: 0";
 // using .textContent to add text to the h4_2 element in the header
 h4_2.textContent = "High Scores";
+
 h4_3.textContent = "Back";
 
 // create a function that randomly selects a question from the questions array
@@ -123,7 +126,7 @@ function randomQuestion() {
   var random = Math.floor(Math.random() * questions.length);
   // create a variable that stores the question at the random index of the questions array
   h1.textContent = questions[random].question;
-  button.textContent = Object.keys(questions[random].answers)[0];
+  button0.textContent = Object.keys(questions[random].answers)[0];
   button1.textContent = Object.keys(questions[random].answers)[1];
   button2.textContent = Object.keys(questions[random].answers)[2];
   button3.textContent = Object.keys(questions[random].answers)[3];
@@ -135,7 +138,7 @@ function randomQuestion() {
 button4.textContent = "Save";
 
 // setting the class attribute of all buttons to "btn"
-button.setAttribute("class", "btn");
+button0.setAttribute("class", "btn");
 button1.setAttribute("class", "btn");
 button2.setAttribute("class", "btn");
 button3.setAttribute("class", "btn");
@@ -145,7 +148,7 @@ form.setAttribute("id", "form");
 // using .setAttribute() to add an id to the input element
 input.setAttribute("id", "input");
 // using .setAttribute() to add an id to the button element
-button.setAttribute("id", "button");
+button0.setAttribute("id", "button0");
 // using .setAttribute() to add an id to the button1 element
 button1.setAttribute("id", "button1");
 // using .setAttribute() to add an id to the button2 element
@@ -193,10 +196,14 @@ function styleFirstPage() {
   });
   //use .setAttribute() to hide button4
   button4.setAttribute("style", "display:none");
+  startButton.setAttribute("style", "display:none");
   // use .setAttribute() to hide the input element
   input.setAttribute("style", "display:none");
   h4.textContent = "Timer: 0";
-  h4_2.setAttribute("style", "display:visaible");
+  h4_2.setAttribute(
+    "style",
+    "background-color:white; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif;"
+  );
   h4_3.setAttribute("style", "display:none");
   // using .setAttribute() to add style to the body element
   document.body.setAttribute(
@@ -209,7 +216,7 @@ function styleFirstPage() {
 
 function styleSecondPage() {
   mode = "second";
-  // h1.textContent = "Quiz";
+  h1.textContent = "Save your score";
   h4_3.setAttribute("style", "display:visible");
   // use .setAttribute() to show the input element
   input.setAttribute("style", "display:visible");
@@ -218,11 +225,12 @@ function styleSecondPage() {
     "style",
     "display:visible; background-color:#5e3d92; border: #5e3d92 1px solid; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;padding: 0px 10px; width: fit-content;"
   );
-  button.setAttribute("style", "display:none");
+  startButton.setAttribute("style", "display:none");
+  button0.setAttribute("style", "display:none; border: none");
   button1.setAttribute("style", "display:none");
   button2.setAttribute("style", "display:none");
   button3.setAttribute("style", "display:none");
-  h4_2.setAttribute("style", "display:none");
+  h4_2.setAttribute("style", "display:none; border:white");
   // use .setAttribute() to change the text of the button4 element to "Save"
   button4.textContent = "Save";
 }
@@ -233,11 +241,20 @@ function styleTitlePage() {
     "style",
     "background-color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;"
   );
+  h4_2.setAttribute(
+    "style",
+    "background-color:white; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif;"
+  );
   div_actions.setAttribute(
     "style",
     "display:flex; background-color: white; color: black; padding: 20px; text-align: center; flex-direction: row-reverse; width: 95%; justify-content: space-between; margin: 0 auto; border-radius: 5px; margin-bottom: 20px;"
   );
-  h1.textContent = "Coding Quiz Challenge";
+  h1.textContent = "Quiz";
+  startButton.textContent = "Start";
+  startButton.setAttribute(
+    "style",
+    "background-color:#5e3d92; border: #5e3d92 1px solid; color:white; margin:5px; border-radius:10px; font-size: 20px; font-family: 'Times New Roman', Times, serif;padding: 0px 10px; width: fit-content; display:visable;"
+  );
   h1.setAttribute(
     "style",
     "text-align:center; width: 100%; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
@@ -258,7 +275,7 @@ function styleTitlePage() {
   // use .setAttribute() to hide the button4 element
   button4.setAttribute("style", "display:none");
   // use .setAttribute() to hide the button element
-  button.setAttribute("style", "display:none");
+  button0.setAttribute("style", "display:none; border: none");
   // use .setAttribute() to hide the button1 element
   button1.setAttribute("style", "display:none");
   // use .setAttribute() to hide the button2 element
@@ -266,12 +283,11 @@ function styleTitlePage() {
   // use .setAttribute() to hide the button3 element
   button3.setAttribute("style", "display:none");
   h4_3.setAttribute("style", "display:none");
-  h4_2.setAttribute("style", "display:visaible");
   // use .setAttribute() to change the text of the h4_2 element to "View High Scores"
   h4_2.textContent = "View High Scores";
   // use .setAttribute() to change the text of the h4 element to "Coding Quiz Challenge"
   h4.textContent = "Coding Quiz Challenge";
-  h1.addEventListener("click", function (event) {
+  startButton.addEventListener("click", function (event) {
     event.stopPropagation();
     styleFirstPage();
   });
