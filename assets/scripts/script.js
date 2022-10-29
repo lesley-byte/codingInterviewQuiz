@@ -117,20 +117,20 @@ h4.textContent = "Timer: 0";
 h4_2.textContent = "High Scores";
 h4_3.textContent = "Back";
 
-// button.textContent = "Question 1";
-// // using .textContent to add text to the button1 element
-// button1.textContent = "Question 2";
-// // using .textContent to add text to the button2 element
-// button2.textContent = "Question 3";
-// // using .textContent to add text to the button3 element
-// button3.textContent = "Question 4";
-// set the text content of button, button1, button2, button3 to the first answer, second answer, third answer, fourth answer of a randomly selected question from the questions array
-// set the text content of button, button1, button2, button3 to the first answer, second answer, third answer, fourth answer of a randomly selected question from the questions array
+// create a function that randomly selects a question from the questions array
+function randomQuestion() {
+  // create a variable that stores a random number between 0 and the length of the questions array
+  var random = Math.floor(Math.random() * questions.length);
+  // create a variable that stores the question at the random index of the questions array
+  h1.textContent = questions[random].question;
+  button.textContent = Object.keys(questions[random].answers)[0];
+  button1.textContent = Object.keys(questions[random].answers)[1];
+  button2.textContent = Object.keys(questions[random].answers)[2];
+  button3.textContent = Object.keys(questions[random].answers)[3];
+  // console.log the random question
+  console.log(questions[random].question);
+}
 
-button.textContent = Object.keys(questions[0].answers)[0];
-button1.textContent = Object.keys(questions[0].answers)[1];
-button2.textContent = Object.keys(questions[0].answers)[2];
-button3.textContent = Object.keys(questions[0].answers)[3];
 // using .textContent to add text to the button4 element
 button4.textContent = "Save";
 
@@ -159,11 +159,12 @@ button4.setAttribute("id", "button4");
 
 function styleFirstPage() {
   mode = "first";
+  randomQuestion();
   div_actions.setAttribute(
     "style",
     "display:flex; background-color: white; color: black; padding: 20px; text-align: center; flex-direction: row-reverse; width: 95%; justify-content: space-between; margin: 0 auto; border-radius: 5px; margin-bottom: 20px;"
   );
-  h1.textContent = "Quiz";
+  // h1.textContent = "Quiz";
   h1.setAttribute(
     "style",
     "text-align:left; width: 100%; color:black; font-size: 50px; font-family: 'Times New Roman', Times, serif;"
@@ -208,7 +209,7 @@ function styleFirstPage() {
 
 function styleSecondPage() {
   mode = "second";
-  h1.textContent = "Quiz";
+  // h1.textContent = "Quiz";
   h4_3.setAttribute("style", "display:visible");
   // use .setAttribute() to show the input element
   input.setAttribute("style", "display:visible");
@@ -283,8 +284,9 @@ h4_3.addEventListener("click", function (event) {
 });
 
 h4_2.addEventListener("click", function (event) {
-  styleSecondPage();
   event.stopPropagation();
+  styleSecondPage();
+
   // if h4_2 is clicked again, show all elements except the input and button4
 });
 styleTitlePage();
