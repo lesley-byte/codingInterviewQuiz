@@ -202,7 +202,7 @@ function styleFirstPage() {
   h4.textContent = "Timer: 0";
   h4_2.setAttribute(
     "style",
-    "background-color:white; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif; font-weight: bold; font-size: 1em;"
+    "background-color:white; font-weight: bold;font-size: 1em; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif;"
   );
   h4_3.setAttribute("style", "display:none");
   // using .setAttribute() to add style to the body element
@@ -246,7 +246,7 @@ function styleTitlePage() {
   );
   h4_2.setAttribute(
     "style",
-    "background-color:white; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif; font-weight: bold;font-size: 1em;"
+    "background-color:white; font-weight: bold;font-size: 1em; display:visable; color:black; border:white; margin:0px; padding:0px; font-family: 'Times New Roman', Times, serif;"
   );
   div_actions.setAttribute(
     "style",
