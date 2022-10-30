@@ -1,3 +1,5 @@
+var score = 0;
+var chosenAnswer = "";
 var mode = "title";
 // using document.createElement() to create a header
 var div_actions = document.createElement("div");
@@ -21,6 +23,7 @@ var button1 = document.createElement("button");
 var button2 = document.createElement("button");
 var button3 = document.createElement("button");
 var button4 = document.createElement("button");
+var p_0 = document.createElement("p");
 
 // using object to store the questions and their 4 possible answers as well as which answers are corrent and which are wrong
 var questions = [
@@ -61,11 +64,13 @@ var questions = [
     },
   },
 ];
-console.log(questions[0].question);
-console.log(Object.keys(questions[0].answers)[0]);
-console.log(questions[0].answers.Paris);
-//console.log how many questions are in the questions array
-console.log(questions.length);
+// console.log(questions[0].question);
+// console.log(Object.keys(questions[0].answers)[0]);
+// console.log(questions[0].answers.Paris);
+// var wacky = Object.keys(questions[0].answers)[0];
+// console.log(questions[0].answers[wacky]);
+// //console.log how many questions are in the questions array
+// console.log(questions.length);
 // create a function that loops through the questions array and displays the questions and their answers one at a time
 // function displayQuestions() {
 //   // create a for loop that loops through the questions array
@@ -97,6 +102,7 @@ section.appendChild(h1);
 section.appendChild(startButton);
 // using .appendChild() to add the form to the section element
 section.appendChild(form);
+document.body.appendChild(p_0);
 // using .appendChild() to add the input to the form element
 form.appendChild(input);
 // using .appendChild() to add the button4 to the form element
@@ -130,8 +136,18 @@ function randomQuestion() {
   button1.textContent = Object.keys(questions[random].answers)[1];
   button2.textContent = Object.keys(questions[random].answers)[2];
   button3.textContent = Object.keys(questions[random].answers)[3];
+  p_0.textContent =
+    "I'm p_0 and you need to place me in the right place and give me the right value haha!!"; //chosenAnswer;
   // console.log the random question
-  console.log(questions[random].question);
+  var tempValue0 = Object.keys(questions[random].answers)[0];
+  var tempValue1 = Object.keys(questions[random].answers)[1];
+  var tempValue2 = Object.keys(questions[random].answers)[2];
+  var tempValue3 = Object.keys(questions[random].answers)[3];
+
+  var tempScoreChange0 = questions[random].answers[tempValue0];
+  var tempScoreChange1 = questions[random].answers[tempValue1];
+  var tempScoreChange2 = questions[random].answers[tempValue2];
+  var tempScoreChange3 = questions[random].answers[tempValue3];
 }
 
 // using .textContent to add text to the button4 element
@@ -210,7 +226,7 @@ function styleFirstPage() {
     "style",
     "background-color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;"
   );
-
+  p_0.setAttribute("style", "color:grey; font-size: 1em;");
   //add an event listener to button, button1, button2, button3 to display the value of the answer key of the question object in the console
 }
 
@@ -295,6 +311,10 @@ function styleTitlePage() {
     styleFirstPage();
   });
 }
+
+//function to add p_0 to style if answer is "Right!" or "Wrong!"
+//
+
 //----------------------------------------------------------------------------------------------------------------
 // if h4_2 is clicked, hide all elements except the input and button4
 h4_3.addEventListener("click", function (event) {
@@ -308,4 +328,5 @@ h4_2.addEventListener("click", function (event) {
 
   // if h4_2 is clicked again, show all elements except the input and button4
 });
+
 styleTitlePage();
