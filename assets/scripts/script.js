@@ -63,6 +63,12 @@ var form_0 = document.createElement("form");
 form_0.id = "form_0";
 section_0.appendChild(form_0);
 form_0.setAttribute("style", "display: flex; flex-direction: column;");
+// create a h2 element called "h2_0" and append it to the form_0. add textContent to the h2 showing the current score and asking if the user wants to save their score and type their initials
+var h2_0 = document.createElement("h2");
+h2_0.id = "h2_0";
+h2_0.textContent = "Score: ";
+form_0.appendChild(h2_0);
+
 // create a input element called "input_0" and append it to the form_0
 var input_0 = document.createElement("input");
 input_0.id = "input_0";
@@ -256,6 +262,7 @@ startbtn.addEventListener("click", function () {
       form_0.style.display = "flex";
       form_2.style.display = "none";
       form_1.style.display = "none";
+      h2_0.textContent = "Score: " + score + " Do you want to save your score?";
     }
   }, 1000);
 
