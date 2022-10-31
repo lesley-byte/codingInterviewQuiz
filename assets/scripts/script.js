@@ -264,27 +264,71 @@ backbtn.addEventListener("click", function () {
   form_1.style.display = "none";
   form_2.style.display = "none";
 });
-// create event listener for button_2 through button_5 that shows form_0 and hides form_1
+// create event listener for button_2 through button_5 that shows form_0 and hides form_1 and updates p_1 to show whether the questions array at questionIndex's answers object's key of the button's textContent is "Right!" or "Wrong!"
 
 button_2.addEventListener("click", function () {
-  backbtn.style.display = "flex";
-  form_0.style.display = "flex";
-  form_1.style.display = "none";
+  if (questions[questionIndex].answers[button_2.textContent] === "Right!") {
+    p_1.textContent = "Right!";
+    score += 10;
+  } else {
+    p_1.textContent = "Wrong!";
+    time -= 10;
+  }
+  questionIndex++;
+  if (questionIndex < questions.length) {
+    startQuiz();
+  } else {
+    questionIndex = 0;
+    startQuiz();
+  }
 });
 button_3.addEventListener("click", function () {
-  backbtn.style.display = "flex";
-  form_0.style.display = "flex";
-  form_1.style.display = "none";
+  if (questions[questionIndex].answers[button_3.textContent] === "Right!") {
+    p_1.textContent = "Right!";
+    score += 10;
+  } else {
+    p_1.textContent = "Wrong!";
+    time -= 10;
+  }
+  questionIndex++;
+  if (questionIndex < questions.length) {
+    startQuiz();
+  } else {
+    questionIndex = 0;
+    startQuiz();
+  }
 });
 button_4.addEventListener("click", function () {
-  backbtn.style.display = "flex";
-  form_0.style.display = "flex";
-  form_1.style.display = "none";
+  if (questions[questionIndex].answers[button_4.textContent] === "Right!") {
+    p_1.textContent = "Right!";
+    score += 10;
+  } else {
+    p_1.textContent = "Wrong!";
+    time -= 10;
+  }
+  questionIndex++;
+  if (questionIndex < questions.length) {
+    startQuiz();
+  } else {
+    questionIndex = 0;
+    startQuiz();
+  }
 });
 button_5.addEventListener("click", function () {
-  backbtn.style.display = "flex";
-  form_0.style.display = "flex";
-  form_1.style.display = "none";
+  if (questions[questionIndex].answers[button_5.textContent] === "Right!") {
+    p_1.textContent = "Right!";
+    score += 10;
+  } else {
+    p_1.textContent = "Wrong!";
+    time -= 10;
+  }
+  questionIndex++;
+  if (questionIndex < questions.length) {
+    startQuiz();
+  } else {
+    questionIndex = 0;
+    startQuiz();
+  }
 });
 
 // create event listener for button_1 that hides form_0 and shows form_2
