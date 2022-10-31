@@ -374,6 +374,7 @@ button_2.addEventListener("click", function () {
   if (questions.length === 0) {
     clearInterval(timer);
     h4_0.textContent = "All done!";
+    time = 0;
     button_0.style.display = "none";
     backbtn.style.display = "flex";
     form_0.style.display = "flex";
@@ -404,6 +405,7 @@ button_3.addEventListener("click", function () {
   if (questions.length === 0) {
     clearInterval(timer);
     h4_0.textContent = "All done!";
+    time = 0;
     button_0.style.display = "none";
     backbtn.style.display = "flex";
     form_0.style.display = "flex";
@@ -434,6 +436,7 @@ button_4.addEventListener("click", function () {
   if (questions.length === 0) {
     clearInterval(timer);
     h4_0.textContent = "All done!";
+    time = 0;
     button_0.style.display = "none";
     backbtn.style.display = "flex";
     form_0.style.display = "flex";
@@ -464,6 +467,7 @@ button_5.addEventListener("click", function () {
   if (questions.length === 0) {
     clearInterval(timer);
     h4_0.textContent = "All done!";
+    time = 0;
     button_0.style.display = "none";
     backbtn.style.display = "flex";
     form_0.style.display = "flex";
