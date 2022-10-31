@@ -419,6 +419,33 @@ button_1.addEventListener("click", function () {
   form_0.style.display = "none";
   form_2.style.display = "flex";
   button_0.style.display = "none";
+  // turn value of input_0 into a variable, then json stringify it with score and set it to local storage
+  var initials = input_0.value;
+  var scoreObject = {
+    initials: initials,
+    score: score,
+  };
+  var scoreObjectString = JSON.stringify(scoreObject);
+  localStorage.setItem("scoreObject", scoreObjectString);
+
+  // create a variable that gets the value of local storage and json parse it
+  var scoreObjectString = localStorage.getItem("scoreObject");
+  var scoreObject = JSON.parse(scoreObjectString);
+  // create a variable that gets the value of the scoreObject's score key
+  var scoreObjectScore = scoreObject.score;
+  // create a variable that gets the value of the scoreObject's initials key
+  var scoreObjectInitials = scoreObject.initials;
+  // create a variable that gets the value of the scoreObject's score key and converts it to a string
+  var scoreObjectScoreString = scoreObjectScore.toString();
+  // create a variable that gets the value of the scoreObject's initials key and converts it to a string
+  var scoreObjectInitialsString = scoreObjectInitials.toString();
+  // create a variable that gets the value of the scoreObject's score key and converts it to a string and adds a space
+  var scoreObjectScoreStringSpace = scoreObjectScoreString + " ";
+  // create a variable that gets the value of the scoreObject's initials key and converts it to a string and adds a space
+  var scoreObjectInitialsStringSpace = scoreObjectInitialsString + " ";
+  // add the value of the scoreObject's initials key and score key to the next row of table_0 element while keeping the previous rows
+  table_0.innerHTML +=
+    scoreObjectInitialsStringSpace + scoreObjectScoreStringSpace;
 });
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
@@ -433,6 +460,9 @@ button_6.addEventListener("click", function () {
   form_1.style.display = "none";
   form_2.style.display = "none";
   button_0.style.display = "flex";
+  // clear local storage and table_0 rows
+  localStorage.clear();
+  table_0.innerHTML = "";
 });
 button_7.addEventListener("click", function () {
   time = 60;
