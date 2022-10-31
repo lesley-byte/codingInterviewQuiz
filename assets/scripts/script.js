@@ -219,7 +219,7 @@ var questions = [
   },
 ];
 // create a variable called "questionIndex" and set it to 0
-var questionIndex = 0;
+var questionIndex = Math.floor(Math.random() * questions.length);
 // create a variable called "score" and set it to 0
 var score = 0;
 // create a variable called "time" and set it to 60
@@ -352,7 +352,7 @@ button_2.addEventListener("click", function () {
   } else {
     time -= 10;
   }
-  questionIndex++;
+  questionIndex = Math.floor(Math.random() * questions.length);
   if (questionIndex < questions.length) {
     startQuiz();
   } else {
@@ -369,7 +369,7 @@ button_3.addEventListener("click", function () {
   } else {
     time -= 10;
   }
-  questionIndex++;
+  questionIndex = Math.floor(Math.random() * questions.length);
   if (questionIndex < questions.length) {
     startQuiz();
   } else {
@@ -386,7 +386,7 @@ button_4.addEventListener("click", function () {
   } else {
     time -= 10;
   }
-  questionIndex++;
+  questionIndex = Math.floor(Math.random() * questions.length);
   if (questionIndex < questions.length) {
     startQuiz();
   } else {
@@ -403,7 +403,7 @@ button_5.addEventListener("click", function () {
   } else {
     time -= 10;
   }
-  questionIndex++;
+  questionIndex = Math.floor(Math.random() * questions.length);
   if (questionIndex < questions.length) {
     startQuiz();
   } else {
@@ -466,6 +466,8 @@ button_6.addEventListener("click", function () {
   button_0.style.display = "flex";
   // clear local storage
   localStorage.clear();
+  // clear rows of table_0 element but not the first row
+  table_0.innerHTML = "<tr><th>Initials</th><th>Score</th></tr>";
 });
 button_7.addEventListener("click", function () {
   time = 60;
