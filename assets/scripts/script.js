@@ -443,9 +443,13 @@ button_1.addEventListener("click", function () {
   var scoreObjectScoreStringSpace = scoreObjectScoreString + " ";
   // create a variable that gets the value of the scoreObject's initials key and converts it to a string and adds a space
   var scoreObjectInitialsStringSpace = scoreObjectInitialsString + " ";
-  // add the value of the scoreObject's initials key and score key to the next row of table_0 element while keeping the previous rows
+  // add the value of the scoreObject's initials key and score key to the next row of table_0 element while keeping the previous rows. the initial and score should be on the same row but on different columns
   table_0.innerHTML +=
-    scoreObjectInitialsStringSpace + scoreObjectScoreStringSpace;
+    "<tr><td>" +
+    scoreObjectInitialsStringSpace +
+    "</td><td>" +
+    scoreObjectScoreStringSpace +
+    "</td></tr>";
 });
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
@@ -460,9 +464,8 @@ button_6.addEventListener("click", function () {
   form_1.style.display = "none";
   form_2.style.display = "none";
   button_0.style.display = "flex";
-  // clear local storage and table_0 rows
+  // clear local storage
   localStorage.clear();
-  table_0.innerHTML = "";
 });
 button_7.addEventListener("click", function () {
   time = 60;
