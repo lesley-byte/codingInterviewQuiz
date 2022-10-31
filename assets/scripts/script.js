@@ -26,11 +26,16 @@ div_0.appendChild(h4_0);
 var div_1 = document.createElement("div");
 div_1.id = "div_1";
 document.body.appendChild(div_1);
+div_1.setAttribute("style", "display: flex; justify-content: center;");
 
 // create a form element called "startform" and append it to the div_1
 var startform = document.createElement("form");
 startform.id = "startform";
 div_1.appendChild(startform);
+startform.setAttribute(
+  "style",
+  "display: flex; flex-direction: column; flex-wrap:wrap; align-items: center; width: 50%;"
+);
 
 // create a h1 element called "h1_0" and append it to the startform. add textContent to the h1
 var h1_0 = document.createElement("h1");
@@ -57,6 +62,7 @@ div_1.appendChild(section_0);
 var form_0 = document.createElement("form");
 form_0.id = "form_0";
 section_0.appendChild(form_0);
+form_0.setAttribute("style", "display: flex; flex-direction: column;");
 // create a input element called "input_0" and append it to the form_0
 var input_0 = document.createElement("input");
 input_0.id = "input_0";
@@ -71,6 +77,10 @@ form_0.appendChild(button_1);
 var form_1 = document.createElement("form");
 form_1.id = "form_1";
 section_0.appendChild(form_1);
+form_1.setAttribute(
+  "style",
+  "display: flex; flex-direction: column; align-items: flex-start;"
+);
 
 // create 4 more button elements called "button_2", "button_3", "button_4", "button_5" and append them to the form_1 and add textContent to the buttons answer1, answer2, answer3, answer4
 var button_2 = document.createElement("button");
@@ -101,6 +111,7 @@ p_1.setAttribute("style", "border-top: 1px solid lightgrey; color: lightgrey;");
 var form_2 = document.createElement("form");
 form_2.id = "form_2";
 section_0.appendChild(form_2);
+form_2.setAttribute("style", "display: flex; flex-direction: column;");
 var button_6 = document.createElement("button");
 button_6.id = "button_6";
 button_6.textContent = "clear";
@@ -187,7 +198,7 @@ for (var i = 0; i < buttons.length; i++) {
   buttons[i].style.fontSize = "20px";
   buttons[i].style.fontFamily = "'Times New Roman', Times, serif";
   buttons[i].style.padding = "0px 10px";
-  buttons[i].style.margin = "10px";
+  buttons[i].style.margin = "2px";
   buttons[i].style.cursor = "pointer";
 }
 // make all buttons have a hover effect that changes the background color to lavender and the color to slateblue
@@ -216,7 +227,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 // in the beginning, show startform, hide form_0, form_1, and form_2
-startform.style.display = "block";
+startform.style.display = "flex";
 backbtn.style.display = "none";
 form_0.style.display = "none";
 form_1.style.display = "none";
@@ -226,20 +237,21 @@ form_2.style.display = "none";
 startbtn.addEventListener("click", function () {
   backbtn.style.display = "block";
   startform.style.display = "none";
-  form_1.style.display = "block";
+  form_1.style.display = "flex";
   startQuiz();
 });
 
 // create event listener for button_0 that hides startform and shows form_2
 button_0.addEventListener("click", function () {
-  backbtn.style.display = "block";
+  backbtn.style.display = "flex";
   startform.style.display = "none";
-  form_2.style.display = "block";
+  form_2.style.display = "flex";
+  form_1.style.display = "none";
 });
 
 // create event listener for backbtn that shows startform, hide form_0, form_1, and form_2
 backbtn.addEventListener("click", function () {
-  startform.style.display = "block";
+  startform.style.display = "flex";
   backbtn.style.display = "none";
   form_0.style.display = "none";
   form_1.style.display = "none";
@@ -248,44 +260,44 @@ backbtn.addEventListener("click", function () {
 // create event listener for button_2 through button_5 that shows form_0 and hides form_1
 
 button_2.addEventListener("click", function () {
-  backbtn.style.display = "block";
-  form_0.style.display = "block";
+  backbtn.style.display = "flex";
+  form_0.style.display = "flex";
   form_1.style.display = "none";
 });
 button_3.addEventListener("click", function () {
-  backbtn.style.display = "block";
-  form_0.style.display = "block";
+  backbtn.style.display = "flex";
+  form_0.style.display = "flex";
   form_1.style.display = "none";
 });
 button_4.addEventListener("click", function () {
-  backbtn.style.display = "block";
-  form_0.style.display = "block";
+  backbtn.style.display = "flex";
+  form_0.style.display = "flex";
   form_1.style.display = "none";
 });
 button_5.addEventListener("click", function () {
-  backbtn.style.display = "block";
-  form_0.style.display = "block";
+  backbtn.style.display = "flex";
+  form_0.style.display = "flex";
   form_1.style.display = "none";
 });
 
 // create event listener for button_1 that hides form_0 and shows form_2
 button_1.addEventListener("click", function () {
-  backbtn.style.display = "block";
+  backbtn.style.display = "flex";
   form_0.style.display = "none";
-  form_2.style.display = "block";
+  form_2.style.display = "flex";
 });
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
 button_6.addEventListener("click", function () {
   backbtn.style.display = "none";
-  startform.style.display = "block";
+  startform.style.display = "flex";
   form_0.style.display = "none";
   form_1.style.display = "none";
   form_2.style.display = "none";
 });
 button_7.addEventListener("click", function () {
   backbtn.style.display = "none";
-  startform.style.display = "block";
+  startform.style.display = "flex";
   form_0.style.display = "none";
   form_1.style.display = "none";
   form_2.style.display = "none";
