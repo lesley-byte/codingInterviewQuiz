@@ -283,7 +283,8 @@ button_0.addEventListener("click", function () {
 backbtn.addEventListener("click", function () {
   time = 60;
   score = 0;
-  h4_0.textContent = "Are you thirsty for more?";
+  h4_0.textContent =
+    "Are you guys ready to give up or are you thirsty for more?";
   startform.style.display = "flex";
   backbtn.style.display = "none";
   form_0.style.display = "none";
@@ -369,7 +370,8 @@ button_1.addEventListener("click", function () {
 button_6.addEventListener("click", function () {
   time = 60;
   score = 0;
-  h4_0.textContent = "Are you thirsty for more?";
+  h4_0.textContent =
+    "Are you guys ready to give up or are you thirsty for more?";
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
@@ -379,7 +381,8 @@ button_6.addEventListener("click", function () {
 button_7.addEventListener("click", function () {
   time = 60;
   score = 0;
-  h4_0.textContent = "Are you thirsty for more?";
+  h4_0.textContent =
+    "Are you guys ready to give up or are you thirsty for more?";
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
