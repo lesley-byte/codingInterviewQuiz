@@ -353,12 +353,7 @@ button_2.addEventListener("click", function () {
     time -= 10;
   }
   questionIndex = Math.floor(Math.random() * questions.length);
-  if (questionIndex < questions.length) {
-    startQuiz();
-  } else {
-    questionIndex = 0;
-    startQuiz();
-  }
+  startQuiz();
 });
 button_3.addEventListener("click", function () {
   p_1.textContent = questions[questionIndex].answers[button_3.textContent];
@@ -370,12 +365,7 @@ button_3.addEventListener("click", function () {
     time -= 10;
   }
   questionIndex = Math.floor(Math.random() * questions.length);
-  if (questionIndex < questions.length) {
-    startQuiz();
-  } else {
-    questionIndex = 0;
-    startQuiz();
-  }
+  startQuiz();
 });
 button_4.addEventListener("click", function () {
   p_1.textContent = questions[questionIndex].answers[button_4.textContent];
@@ -387,12 +377,7 @@ button_4.addEventListener("click", function () {
     time -= 10;
   }
   questionIndex = Math.floor(Math.random() * questions.length);
-  if (questionIndex < questions.length) {
-    startQuiz();
-  } else {
-    questionIndex = 0;
-    startQuiz();
-  }
+  startQuiz();
 });
 button_5.addEventListener("click", function () {
   p_1.textContent = questions[questionIndex].answers[button_5.textContent];
@@ -404,12 +389,7 @@ button_5.addEventListener("click", function () {
     time -= 10;
   }
   questionIndex = Math.floor(Math.random() * questions.length);
-  if (questionIndex < questions.length) {
-    startQuiz();
-  } else {
-    questionIndex = 0;
-    startQuiz();
-  }
+  startQuiz();
 });
 
 // create event listener for button_1 that hides form_0 and shows form_2
