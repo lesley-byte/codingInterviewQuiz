@@ -10,11 +10,19 @@ var button_0 = document.createElement("button");
 button_0.id = "button_0";
 button_0.textContent = "High Scores";
 div_0.appendChild(button_0);
+button_0.setAttribute(
+  "style",
+  "display: flex; align-items: center; justify-content: center; border: 1px solid white; background-color: white; color:black;"
+);
 // create another button element called "backbtn" and append it to the div_0. add textContent to the button
 var backbtn = document.createElement("button");
 backbtn.id = "backbtn";
 backbtn.textContent = "Back";
 div_0.appendChild(backbtn);
+backbtn.setAttribute(
+  "style",
+  "display: flex; align-items: center; justify-content: center; border: 1px solid white; background-color: white; color:black;"
+);
 
 // create a h4 element called "h4_0" and append it to the div_0. add textContent to the h4
 var h4_0 = document.createElement("h4");
@@ -112,14 +120,20 @@ form_1.appendChild(button_5);
 var p_1 = document.createElement("p");
 p_1.id = "p_1";
 form_1.appendChild(p_1);
-p_1.setAttribute("style", "border-top: 1px solid lightgrey; color: grey;");
+p_1.setAttribute(
+  "style",
+  "border-top: 1px solid lightgrey; width: 100%; color: grey;"
+);
 
 // create a form element called "form_2" and append it to the section_0
 // create two more button elements and append them to the form_2  and add textContent to the buttons "clear" and "retake quiz"
 var form_2 = document.createElement("form");
 form_2.id = "form_2";
 section_0.appendChild(form_2);
-form_2.setAttribute("style", "display: flex; flex-direction: column;");
+form_2.setAttribute(
+  "style",
+  "display: flex; flex-direction: row; width: 40vw; justify-content: center;"
+);
 var button_6 = document.createElement("button");
 button_6.id = "button_6";
 button_6.textContent = "clear";
@@ -200,34 +214,34 @@ function startQuiz() {
   //set the textContent of p_1 to "Score: " + score
   // p_1.textContent = "Score: " + score;
 }
-// style all buttons to have a background color of slateblue, a color of white, a border of 1px solid black, a border radius of 5px, a font size of 20px, a font family of sans-serif, a font weight of bold, a padding of 10px, a margin of 10px, and a cursor of pointer
+// style all buttons except button_0 and backbtn to have a background color of slateblue, a color of white, a border of 1px solid black, a border radius of 5px, a font size of 20px, a font family of sans-serif, a font weight of bold, a padding of 10px, a margin of 10px, and a cursor of pointer
 var buttons = document.querySelectorAll("button");
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].style.backgroundColor = "#5e3d92";
-  buttons[i].style.color = "white";
-  buttons[i].style.border = "1px solid slateblue";
-  buttons[i].style.borderRadius = "10px";
-  buttons[i].style.fontSize = "20px";
-  buttons[i].style.fontFamily = "'Times New Roman', Times, serif";
-  buttons[i].style.padding = "0px 10px";
-  buttons[i].style.margin = "2px";
-  buttons[i].style.cursor = "pointer";
+  if (buttons[i].id !== "button_0" && buttons[i].id !== "backbtn") {
+    buttons[i].setAttribute(
+      "style",
+      "background-color: #5e3d92; color: white; border: 1px solid #5e3d92; border-radius: 5px; max-width: fit-content; font-size: 15px; font-family: sans-serif; font-weight: bold; padding: 0px 10px; margin: 5px; cursor: pointer;"
+    );
+  }
 }
 // make all buttons have a hover effect that changes the background color to lavender and the color to slateblue
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("mouseover", function () {
-    this.style.backgroundColor = "lavender";
-    this.style.color = "#5e3d92";
-  });
+  if (buttons[i].id !== "button_0" && buttons[i].id !== "backbtn") {
+    buttons[i].addEventListener("mouseover", function () {
+      this.style.backgroundColor = "lavender";
+      this.style.color = "#5e3d92";
+    });
+  }
 }
 // make all buttons have a mouseout effect that changes the background color to slateblue and the color to white
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("mouseout", function () {
-    this.style.backgroundColor = "#5e3d92";
-    this.style.color = "white";
-  });
+  if (buttons[i].id !== "button_0" && buttons[i].id !== "backbtn") {
+    buttons[i].addEventListener("mouseout", function () {
+      this.style.backgroundColor = "#5e3d92";
+      this.style.color = "white";
+    });
+  }
 }
-
 // create event listeners for all elements that console.log the element's id and textContent
 var elements = document.querySelectorAll("body *");
 for (var i = 0; i < elements.length; i++) {
