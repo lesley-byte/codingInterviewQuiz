@@ -24,4 +24,4 @@ MIT License
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
-Copyright (c) 2020 Lesley
+Copyright (c) 2022 lesley-byte
