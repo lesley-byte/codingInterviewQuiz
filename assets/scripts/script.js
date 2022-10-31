@@ -240,6 +240,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 // in the beginning, show startform, hide form_0, form_1, and form_2
+h4_0.textContent = "Get Ready!";
 startform.style.display = "flex";
 backbtn.style.display = "none";
 form_0.style.display = "none";
@@ -248,7 +249,7 @@ form_2.style.display = "none";
 
 // create event listener for startbtn that hides startform and shows form_1
 startbtn.addEventListener("click", function () {
-  backbtn.style.display = "block";
+  backbtn.style.display = "flex";
   startform.style.display = "none";
   form_1.style.display = "flex";
 
@@ -271,6 +272,7 @@ startbtn.addEventListener("click", function () {
 
 // create event listener for button_0 that hides startform and shows form_2
 button_0.addEventListener("click", function () {
+  time = 60;
   backbtn.style.display = "flex";
   startform.style.display = "none";
   form_2.style.display = "flex";
@@ -279,8 +281,9 @@ button_0.addEventListener("click", function () {
 
 // create event listener for backbtn that shows startform, hide form_0, form_1, and form_2
 backbtn.addEventListener("click", function () {
-  var time = 60;
-  var score = 0;
+  time = 60;
+  score = 0;
+  h4_0.textContent = "Are you thirsty for more?";
   startform.style.display = "flex";
   backbtn.style.display = "none";
   form_0.style.display = "none";
@@ -356,6 +359,7 @@ button_5.addEventListener("click", function () {
 
 // create event listener for button_1 that hides form_0 and shows form_2
 button_1.addEventListener("click", function () {
+  time = 60;
   backbtn.style.display = "flex";
   form_0.style.display = "none";
   form_2.style.display = "flex";
@@ -363,8 +367,9 @@ button_1.addEventListener("click", function () {
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
 button_6.addEventListener("click", function () {
-  var time = 60;
-  var score = 0;
+  time = 60;
+  score = 0;
+  h4_0.textContent = "Are you thirsty for more?";
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
@@ -372,8 +377,9 @@ button_6.addEventListener("click", function () {
   form_2.style.display = "none";
 });
 button_7.addEventListener("click", function () {
-  var time = 60;
-  var score = 0;
+  time = 60;
+  score = 0;
+  h4_0.textContent = "Are you thirsty for more?";
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
