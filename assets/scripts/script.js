@@ -357,7 +357,19 @@ button_2.addEventListener("click", function () {
   setTimeout(function () {
     h1_1.style.color = "black";
   }, 300);
-
+  // delete the element at index questionIndex of the questions array
+  questions.splice(questionIndex, 1);
+  // if the questions array is empty, show form_0 and hide form_1
+  if (questions.length === 0) {
+    clearInterval(timer);
+    h4_0.textContent = "All done!";
+    button_0.style.display = "none";
+    backbtn.style.display = "flex";
+    form_0.style.display = "flex";
+    form_2.style.display = "none";
+    form_1.style.display = "none";
+    h2_0.textContent = "Score: " + score + " Do you want to save your score?";
+  }
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -375,6 +387,19 @@ button_3.addEventListener("click", function () {
   setTimeout(function () {
     h1_1.style.color = "black";
   }, 300);
+  // delete the element at index questionIndex of the questions array
+  questions.splice(questionIndex, 1);
+  // if the questions array is empty, show form_0 and hide form_1
+  if (questions.length === 0) {
+    clearInterval(timer);
+    h4_0.textContent = "All done!";
+    button_0.style.display = "none";
+    backbtn.style.display = "flex";
+    form_0.style.display = "flex";
+    form_2.style.display = "none";
+    form_1.style.display = "none";
+    h2_0.textContent = "Score: " + score + " Do you want to save your score?";
+  }
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -392,6 +417,19 @@ button_4.addEventListener("click", function () {
   setTimeout(function () {
     h1_1.style.color = "black";
   }, 300);
+  // delete the element at index questionIndex of the questions array
+  questions.splice(questionIndex, 1);
+  // if the questions array is empty, show form_0 and hide form_1
+  if (questions.length === 0) {
+    clearInterval(timer);
+    h4_0.textContent = "All done!";
+    button_0.style.display = "none";
+    backbtn.style.display = "flex";
+    form_0.style.display = "flex";
+    form_2.style.display = "none";
+    form_1.style.display = "none";
+    h2_0.textContent = "Score: " + score + " Do you want to save your score?";
+  }
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -409,6 +447,19 @@ button_5.addEventListener("click", function () {
   setTimeout(function () {
     h1_1.style.color = "black";
   }, 300);
+  // delete the element at index questionIndex of the questions array
+  questions.splice(questionIndex, 1);
+  // if the questions array is empty, show form_0 and hide form_1
+  if (questions.length === 0) {
+    clearInterval(timer);
+    h4_0.textContent = "All done!";
+    button_0.style.display = "none";
+    backbtn.style.display = "flex";
+    form_0.style.display = "flex";
+    form_2.style.display = "none";
+    form_1.style.display = "none";
+    h2_0.textContent = "Score: " + score + " Do you want to save your score?";
+  }
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
