@@ -29,6 +29,10 @@ var h4_0 = document.createElement("h4");
 h4_0.id = "h4_0";
 h4_0.textContent = "timer: 0";
 div_0.appendChild(h4_0);
+h4_0.setAttribute(
+  "style",
+  "display: flex; justify-content: flex-end; width:30vw;)"
+);
 
 // create a div element called "div_1" and append it to the body
 var div_1 = document.createElement("div");
