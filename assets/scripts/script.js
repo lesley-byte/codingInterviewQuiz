@@ -297,6 +297,9 @@ button_2.addEventListener("click", function () {
   if (questions[questionIndex].answers[button_2.textContent] === "Right!") {
     p_1.textContent = "Right!";
     score += 10;
+  } else if (time <= 10) {
+    p_1.textContent = "Wrong!";
+    time = 0;
   } else {
     p_1.textContent = "Wrong!";
     time -= 10;
@@ -313,6 +316,9 @@ button_3.addEventListener("click", function () {
   if (questions[questionIndex].answers[button_3.textContent] === "Right!") {
     p_1.textContent = "Right!";
     score += 10;
+  } else if (time <= 10) {
+    p_1.textContent = "Wrong!";
+    time = 0;
   } else {
     p_1.textContent = "Wrong!";
     time -= 10;
@@ -329,6 +335,9 @@ button_4.addEventListener("click", function () {
   if (questions[questionIndex].answers[button_4.textContent] === "Right!") {
     p_1.textContent = "Right!";
     score += 10;
+  } else if (time <= 10) {
+    p_1.textContent = "Wrong!";
+    time = 0;
   } else {
     p_1.textContent = "Wrong!";
     time -= 10;
@@ -345,6 +354,9 @@ button_5.addEventListener("click", function () {
   if (questions[questionIndex].answers[button_5.textContent] === "Right!") {
     p_1.textContent = "Right!";
     score += 10;
+  } else if (time <= 10) {
+    p_1.textContent = "Wrong!";
+    time = 0;
   } else {
     p_1.textContent = "Wrong!";
     time -= 10;
