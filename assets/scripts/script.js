@@ -194,13 +194,13 @@ for (var i = 0; i < buttons.length; i++) {
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("mouseover", function () {
     this.style.backgroundColor = "lavender";
-    this.style.color = "slateblue";
+    this.style.color = "#5e3d92";
   });
 }
 // make all buttons have a mouseout effect that changes the background color to slateblue and the color to white
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("mouseout", function () {
-    this.style.backgroundColor = "slateblue";
+    this.style.backgroundColor = "#5e3d92";
     this.style.color = "white";
   });
 }
