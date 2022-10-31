@@ -103,6 +103,10 @@ var h1_1 = document.createElement("h1");
 h1_1.id = "h1_1";
 h1_1.textContent = "Question";
 form_1.appendChild(h1_1);
+h1_1.setAttribute(
+  "style",
+  "display: flex; flex-wrap:wrap; justify-content: center;"
+);
 // create 4 more button elements called "button_2", "button_3", "button_4", "button_5" and append them to the form_1 and add textContent to the buttons answer1, answer2, answer3, answer4
 var button_2 = document.createElement("button");
 button_2.id = "button_2";
@@ -182,39 +186,41 @@ document.body.appendChild(div_2);
 function setQuestionArray() {
   var questions = [
     {
-      question: "What is the capital of France?",
+      question: "Arrays can be used to store ____?",
       answers: {
-        Paris: "Right!",
-        London: "Wrong!",
-        Berlin: "Wrong!",
-        Rome: "Wrong!",
+        "Numbers and strings": "Wrong!",
+        Brackets: "Wrong!",
+        "Other Arrays": "Wrong!",
+        "All of the above.": "Right!",
       },
     },
     {
-      question: "What is the capital of Germany?",
+      question:
+        "A very useful tool used during development and debugging for printing content to the debugger is:",
       answers: {
-        Paris: "Wrong!",
-        London: "Wrong!",
-        Berlin: "Right!",
-        Rome: "Wrong!",
+        "The Terminal": "Wrong!",
+        Brackets: "Wrong!",
+        "The console.log() function!": "Right!",
+        "The confirm() function!": "Wrong!",
       },
     },
     {
-      question: "What is the capital of Italy?",
+      question: "Strings are enclosed within what?",
       answers: {
-        Paris: "Wrong!",
-        London: "Wrong!",
-        Berlin: "Wrong!",
-        Rome: "Right!",
+        Sandwiches: "Wrong!",
+        Semicolons: "Wrong!",
+        Parenthesis: "Wrong!",
+        "Quotation marks": "Right!",
       },
     },
     {
-      question: "What is the capital of England?",
+      question:
+        "The condition in an if/else statement is enclosed within ____?",
       answers: {
-        Paris: "Wrong!",
-        London: "Right!",
-        Berlin: "Wrong!",
-        Rome: "Wrong!",
+        "Quotation marks": "Wrong!",
+        Parentheses: "Right!",
+        "Curlyy Brackets": "Wrong!",
+        Hyphens: "Wrong!",
       },
     },
   ];
@@ -299,6 +305,7 @@ button_0.style.display = "flex";
 // create event listener for startbtn that hides startform and shows form_1
 startbtn.addEventListener("click", function () {
   questions = setQuestionArray();
+  p_1.textContent = "";
   backbtn.style.display = "flex";
   startform.style.display = "none";
   form_1.style.display = "flex";
