@@ -293,14 +293,12 @@ backbtn.addEventListener("click", function () {
 // create event listener for button_2 through button_5 that shows form_0 and hides form_1 and updates p_1 to show whether the questions array at questionIndex's answers object's key of the button's textContent is "Right!" or "Wrong!"
 
 button_2.addEventListener("click", function () {
+  p_1.textContent = questions[questionIndex].answers[button_2.textContent];
   if (questions[questionIndex].answers[button_2.textContent] === "Right!") {
-    p_1.textContent = "Right!";
     score += 10;
   } else if (time <= 10) {
-    p_1.textContent = "Wrong!";
     time = 0;
   } else {
-    p_1.textContent = "Wrong!";
     time -= 10;
   }
   questionIndex++;
@@ -312,14 +310,12 @@ button_2.addEventListener("click", function () {
   }
 });
 button_3.addEventListener("click", function () {
+  p_1.textContent = questions[questionIndex].answers[button_3.textContent];
   if (questions[questionIndex].answers[button_3.textContent] === "Right!") {
-    p_1.textContent = "Right!";
     score += 10;
   } else if (time <= 10) {
-    p_1.textContent = "Wrong!";
     time = 0;
   } else {
-    p_1.textContent = "Wrong!";
     time -= 10;
   }
   questionIndex++;
@@ -331,14 +327,12 @@ button_3.addEventListener("click", function () {
   }
 });
 button_4.addEventListener("click", function () {
+  p_1.textContent = questions[questionIndex].answers[button_4.textContent];
   if (questions[questionIndex].answers[button_4.textContent] === "Right!") {
-    p_1.textContent = "Right!";
     score += 10;
   } else if (time <= 10) {
-    p_1.textContent = "Wrong!";
     time = 0;
   } else {
-    p_1.textContent = "Wrong!";
     time -= 10;
   }
   questionIndex++;
@@ -350,14 +344,12 @@ button_4.addEventListener("click", function () {
   }
 });
 button_5.addEventListener("click", function () {
+  p_1.textContent = questions[questionIndex].answers[button_5.textContent];
   if (questions[questionIndex].answers[button_5.textContent] === "Right!") {
-    p_1.textContent = "Right!";
     score += 10;
   } else if (time <= 10) {
-    p_1.textContent = "Wrong!";
     time = 0;
   } else {
-    p_1.textContent = "Wrong!";
     time -= 10;
   }
   questionIndex++;
