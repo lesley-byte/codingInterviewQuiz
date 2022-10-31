@@ -111,9 +111,8 @@ form_1.appendChild(button_5);
 
 var p_1 = document.createElement("p");
 p_1.id = "p_1";
-p_1.textContent = "Haha, I'm taunting you! I only belong on the quiz page!";
 form_1.appendChild(p_1);
-p_1.setAttribute("style", "border-top: 1px solid lightgrey; color: lightgrey;");
+p_1.setAttribute("style", "border-top: 1px solid lightgrey; color: grey;");
 
 // create a form element called "form_2" and append it to the section_0
 // create two more button elements and append them to the form_2  and add textContent to the buttons "clear" and "retake quiz"
@@ -199,7 +198,7 @@ function startQuiz() {
   //set the textContent of h4_0 to "Time: " + time
   h4_0.textContent = "Time: " + time;
   //set the textContent of p_1 to "Score: " + score
-  p_1.textContent = "Score: " + score;
+  // p_1.textContent = "Score: " + score;
 }
 // style all buttons to have a background color of slateblue, a color of white, a border of 1px solid black, a border radius of 5px, a font size of 20px, a font family of sans-serif, a font weight of bold, a padding of 10px, a margin of 10px, and a cursor of pointer
 var buttons = document.querySelectorAll("button");
