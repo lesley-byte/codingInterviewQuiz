@@ -352,6 +352,12 @@ button_2.addEventListener("click", function () {
   } else {
     time -= 10;
   }
+  // create transition effect for h1_1 to change the color to #5e3d92 for 1 second
+  h1_1.style.color = "#5e3d92";
+  setTimeout(function () {
+    h1_1.style.color = "black";
+  }, 300);
+
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -364,6 +370,11 @@ button_3.addEventListener("click", function () {
   } else {
     time -= 10;
   }
+  // create transition effect for h1_1 to change the color to #5e3d92 for 1 second
+  h1_1.style.color = "#5e3d92";
+  setTimeout(function () {
+    h1_1.style.color = "black";
+  }, 300);
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -376,6 +387,11 @@ button_4.addEventListener("click", function () {
   } else {
     time -= 10;
   }
+  // create transition effect for h1_1 to change the color to #5e3d92 for 1 second
+  h1_1.style.color = "#5e3d92";
+  setTimeout(function () {
+    h1_1.style.color = "black";
+  }, 300);
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
@@ -388,6 +404,11 @@ button_5.addEventListener("click", function () {
   } else {
     time -= 10;
   }
+  // create transition effect for h1_1 to change the color to #5e3d92 for 1 second
+  h1_1.style.color = "#5e3d92";
+  setTimeout(function () {
+    h1_1.style.color = "black";
+  }, 300);
   questionIndex = Math.floor(Math.random() * questions.length);
   startQuiz();
 });
