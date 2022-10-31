@@ -245,6 +245,20 @@ startbtn.addEventListener("click", function () {
   backbtn.style.display = "block";
   startform.style.display = "none";
   form_1.style.display = "flex";
+
+  var timer = setInterval(function () {
+    time--;
+    h4_0.textContent = "Time: " + time;
+    if (time <= 0) {
+      clearInterval(timer);
+      h4_0.textContent = "Time's up!";
+      backbtn.style.display = "flex";
+      form_0.style.display = "flex";
+      form_2.style.display = "none";
+      form_1.style.display = "none";
+    }
+  }, 1000);
+
   startQuiz();
 });
 
@@ -258,6 +272,8 @@ button_0.addEventListener("click", function () {
 
 // create event listener for backbtn that shows startform, hide form_0, form_1, and form_2
 backbtn.addEventListener("click", function () {
+  var time = 60;
+  var score = 0;
   startform.style.display = "flex";
   backbtn.style.display = "none";
   form_0.style.display = "none";
@@ -340,6 +356,8 @@ button_1.addEventListener("click", function () {
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
 button_6.addEventListener("click", function () {
+  var time = 60;
+  var score = 0;
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
@@ -347,6 +365,8 @@ button_6.addEventListener("click", function () {
   form_2.style.display = "none";
 });
 button_7.addEventListener("click", function () {
+  var time = 60;
+  var score = 0;
   backbtn.style.display = "none";
   startform.style.display = "flex";
   form_0.style.display = "none";
