@@ -136,16 +136,44 @@ form_2.id = "form_2";
 section_0.appendChild(form_2);
 form_2.setAttribute(
   "style",
-  "display: flex; flex-direction: row; width: 40vw; justify-content: center;"
+  "display: flex; flex-direction: column; width: 40vw; justify-content: center;"
+);
+// create a table element called "table_0" and append it to the form_2 it will be used to display the high scores and initials
+var table_0 = document.createElement("table");
+table_0.id = "table_0";
+form_2.appendChild(table_0);
+table_0.setAttribute(
+  "style",
+  "display: flex; flex-direction: column; align-items: center; width: 100%; min-height: 40vh;"
+);
+// table_0 will have two colums, one for the initials and one for the score
+var tr_0 = document.createElement("tr");
+tr_0.id = "tr_0";
+table_0.appendChild(tr_0);
+var th_0 = document.createElement("th");
+th_0.id = "th_0";
+th_0.textContent = "Initials";
+tr_0.appendChild(th_0);
+var th_1 = document.createElement("th");
+th_1.id = "th_1";
+th_1.textContent = "Score";
+tr_0.appendChild(th_1);
+// append div to form_2
+var div_2 = document.createElement("div");
+div_2.id = "div_2";
+form_2.appendChild(div_2);
+div_2.setAttribute(
+  "style",
+  "display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;"
 );
 var button_6 = document.createElement("button");
 button_6.id = "button_6";
 button_6.textContent = "clear";
-form_2.appendChild(button_6);
+div_2.appendChild(button_6);
 var button_7 = document.createElement("button");
 button_7.id = "button_7";
 button_7.textContent = "retake quiz";
-form_2.appendChild(button_7);
+div_2.appendChild(button_7);
 
 // create a div element called "div_2" and append it to the body
 var div_2 = document.createElement("div");
@@ -263,12 +291,14 @@ backbtn.style.display = "none";
 form_0.style.display = "none";
 form_1.style.display = "none";
 form_2.style.display = "none";
+button_0.style.display = "flex";
 
 // create event listener for startbtn that hides startform and shows form_1
 startbtn.addEventListener("click", function () {
   backbtn.style.display = "flex";
   startform.style.display = "none";
   form_1.style.display = "flex";
+  button_0.style.display = "flex";
 
   var timer = setInterval(function () {
     time--;
@@ -276,6 +306,7 @@ startbtn.addEventListener("click", function () {
     if (time <= 0) {
       clearInterval(timer);
       h4_0.textContent = "Time's up!";
+      button_0.style.display = "none";
       backbtn.style.display = "flex";
       form_0.style.display = "flex";
       form_2.style.display = "none";
@@ -294,6 +325,7 @@ button_0.addEventListener("click", function () {
   startform.style.display = "none";
   form_2.style.display = "flex";
   form_1.style.display = "none";
+  button_0.style.display = "none";
 });
 
 // create event listener for backbtn that shows startform, hide form_0, form_1, and form_2
@@ -307,6 +339,7 @@ backbtn.addEventListener("click", function () {
   form_0.style.display = "none";
   form_1.style.display = "none";
   form_2.style.display = "none";
+  button_0.style.display = "flex";
 });
 // create event listener for button_2 through button_5 that shows form_0 and hides form_1 and updates p_1 to show whether the questions array at questionIndex's answers object's key of the button's textContent is "Right!" or "Wrong!"
 
@@ -385,6 +418,7 @@ button_1.addEventListener("click", function () {
   backbtn.style.display = "flex";
   form_0.style.display = "none";
   form_2.style.display = "flex";
+  button_0.style.display = "none";
 });
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
@@ -398,6 +432,7 @@ button_6.addEventListener("click", function () {
   form_0.style.display = "none";
   form_1.style.display = "none";
   form_2.style.display = "none";
+  button_0.style.display = "flex";
 });
 button_7.addEventListener("click", function () {
   time = 60;
@@ -409,4 +444,5 @@ button_7.addEventListener("click", function () {
   form_0.style.display = "none";
   form_1.style.display = "none";
   form_2.style.display = "none";
+  button_0.style.display = "flex";
 });
