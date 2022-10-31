@@ -81,7 +81,10 @@ form_1.setAttribute(
   "style",
   "display: flex; flex-direction: column; align-items: flex-start;"
 );
-
+var h1_1 = document.createElement("h1");
+h1_1.id = "h1_1";
+h1_1.textContent = "Question";
+form_1.appendChild(h1_1);
 // create 4 more button elements called "button_2", "button_3", "button_4", "button_5" and append them to the form_1 and add textContent to the buttons answer1, answer2, answer3, answer4
 var button_2 = document.createElement("button");
 button_2.id = "button_2";
@@ -177,8 +180,8 @@ var highscores = [];
 
 // create a function called "startQuiz" that takes no parameters
 function startQuiz() {
-  //set the textContent of the h1_0 to "questions[questionIndex].question"
-  // h1_0.textContent = questions[questionIndex].question;
+  //set the textContent of the h1_1 to "questions[questionIndex].question"
+  h1_1.textContent = questions[questionIndex].question;
   //set the textContent of button_2 to Object.keys(questions[questionIndex].answers)[0]
   button_2.textContent = Object.keys(questions[questionIndex].answers)[0];
   //set the textContent of button_3 to Object.keys(questions[questionIndex].answers)[1]
@@ -187,6 +190,10 @@ function startQuiz() {
   button_4.textContent = Object.keys(questions[questionIndex].answers)[2];
   //set the textContent of button_5 to Object.keys(questions[questionIndex].answers)[3]
   button_5.textContent = Object.keys(questions[questionIndex].answers)[3];
+  //set the textContent of h4_0 to "Time: " + time
+  h4_0.textContent = "Time: " + time;
+  //set the textContent of p_1 to "Score: " + score
+  p_1.textContent = "Score: " + score;
 }
 // style all buttons to have a background color of slateblue, a color of white, a border of 1px solid black, a border radius of 5px, a font size of 20px, a font family of sans-serif, a font weight of bold, a padding of 10px, a margin of 10px, and a cursor of pointer
 var buttons = document.querySelectorAll("button");
