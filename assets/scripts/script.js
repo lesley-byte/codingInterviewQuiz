@@ -179,45 +179,48 @@ div_2.appendChild(button_7);
 var div_2 = document.createElement("div");
 div_2.id = "div_2";
 document.body.appendChild(div_2);
-
-var questions = [
-  {
-    question: "What is the capital of France?",
-    answers: {
-      Paris: "Right!",
-      London: "Wrong!",
-      Berlin: "Wrong!",
-      Rome: "Wrong!",
+function setQuestionArray() {
+  var questions = [
+    {
+      question: "What is the capital of France?",
+      answers: {
+        Paris: "Right!",
+        London: "Wrong!",
+        Berlin: "Wrong!",
+        Rome: "Wrong!",
+      },
     },
-  },
-  {
-    question: "What is the capital of Germany?",
-    answers: {
-      Paris: "Wrong!",
-      London: "Wrong!",
-      Berlin: "Right!",
-      Rome: "Wrong!",
+    {
+      question: "What is the capital of Germany?",
+      answers: {
+        Paris: "Wrong!",
+        London: "Wrong!",
+        Berlin: "Right!",
+        Rome: "Wrong!",
+      },
     },
-  },
-  {
-    question: "What is the capital of Italy?",
-    answers: {
-      Paris: "Wrong!",
-      London: "Wrong!",
-      Berlin: "Wrong!",
-      Rome: "Right!",
+    {
+      question: "What is the capital of Italy?",
+      answers: {
+        Paris: "Wrong!",
+        London: "Wrong!",
+        Berlin: "Wrong!",
+        Rome: "Right!",
+      },
     },
-  },
-  {
-    question: "What is the capital of England?",
-    answers: {
-      Paris: "Wrong!",
-      London: "Right!",
-      Berlin: "Wrong!",
-      Rome: "Wrong!",
+    {
+      question: "What is the capital of England?",
+      answers: {
+        Paris: "Wrong!",
+        London: "Right!",
+        Berlin: "Wrong!",
+        Rome: "Wrong!",
+      },
     },
-  },
-];
+  ];
+  return questions;
+}
+var questions = setQuestionArray();
 // create a variable called "questionIndex" and set it to 0
 var questionIndex = Math.floor(Math.random() * questions.length);
 // create a variable called "score" and set it to 0
@@ -295,6 +298,7 @@ button_0.style.display = "flex";
 
 // create event listener for startbtn that hides startform and shows form_1
 startbtn.addEventListener("click", function () {
+  questions = setQuestionArray();
   backbtn.style.display = "flex";
   startform.style.display = "none";
   form_1.style.display = "flex";
