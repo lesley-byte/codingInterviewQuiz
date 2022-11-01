@@ -277,6 +277,7 @@ var highscores = [];
 
 // create a function called "startQuiz" that takes no parameters
 function startQuiz() {
+  try{
   //set the textContent of the h1_1 to "questions[questionIndex].question"
   h1_1.textContent = questions[questionIndex].question;
   //set the textContent of button_2 to Object.keys(questions[questionIndex].answers)[0]
@@ -288,7 +289,10 @@ function startQuiz() {
   //set the textContent of button_5 to Object.keys(questions[questionIndex].answers)[3]
   button_5.textContent = Object.keys(questions[questionIndex].answers)[3];
   //set the textContent of h4_0 to "Time: " + time
-  h4_0.textContent = "Time: " + time;
+  h4_0.textContent = "Time: " + time;}
+  catch{
+    console.log("You have completed the quiz!");
+  }
   //set the textContent of p_1 to "Score: " + score
   // p_1.textContent = "Score: " + score;
 }
@@ -558,6 +562,13 @@ button_1.addEventListener("click", function () {
     "</td><td>" +
     scoreObjectScoreStringSpace +
     "</td></tr>";
+    // create a variable that gets the value of table_0's innerHTML and JSON stringify it
+    console.log("---------");
+    console.log(table_0.innerHTML);
+    console.log("---------");
+    var table_0String = JSON.stringify(table_0.innerHTML);
+    // set the value of table_0's innerHTML to local storage
+    localStorage.setItem("scoreObjext", table_0String);
 });
 
 // create event listener for button_6 and button_7 that shows startform, hide form_0, form_1, and form_2
