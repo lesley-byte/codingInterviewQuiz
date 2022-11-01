@@ -1,3 +1,26 @@
+var scoreObjectString = localStorage.getItem("scoreObject");
+
+  var score = 0;
+  var initials = "";
+ 
+var scoreObject = JSON.parse(scoreObjectString);
+  // create a variable that gets the value of the scoreObject's score key
+  var scoreObjectScore = scoreObject.score;
+  // create a variable that gets the value of the scoreObject's initials key
+  var scoreObjectInitials = scoreObject.initials;
+  // create a variable that gets the value of the scoreObject's score key and converts it to a string
+  var scoreObjectScoreString = scoreObjectScore.toString();
+  // create a variable that gets the value of the scoreObject's initials key and converts it to a string
+  var scoreObjectInitialsString = scoreObjectInitials.toString();
+  // create a variable that gets the value of the scoreObject's score key and converts it to a string and adds a space
+  var scoreObjectScoreStringSpace = scoreObjectScoreString + " ";
+  // create a variable that gets the value of the scoreObject's initials key and converts it to a string and adds a space
+  var scoreObjectInitialsStringSpace = scoreObjectInitialsString + " ";
+  // add the value of the scoreObject's initials key and score key to the next row of table_0 element while keeping the previous rows. the initial and score should be on the same row but on different columns
+
+
+
+
 // create a div element called "div_0" and append it to the body
 var div_0 = document.createElement("div");
 div_0.id = "div_0";
@@ -150,17 +173,25 @@ table_0.setAttribute(
   "style",
   "display: flex; flex-direction: column; align-items: center; width: 100%; min-height: 40vh;"
 );
+table_0.innerHTML = "<tr><th>Previous Saves: Initials</th><th>Score</th></tr>";
+table_0.innerHTML +=
+"<tr><td>" +
+scoreObjectInitialsStringSpace +
+"</td><td>" +
+scoreObjectScoreStringSpace +
+"</td></tr>";
+
 // table_0 will have two colums, one for the initials and one for the score
 var tr_0 = document.createElement("tr");
 tr_0.id = "tr_0";
 table_0.appendChild(tr_0);
 var th_0 = document.createElement("th");
 th_0.id = "th_0";
-th_0.textContent = "Initials";
+// th_0.textContent = "Initials";
 tr_0.appendChild(th_0);
 var th_1 = document.createElement("th");
 th_1.id = "th_1";
-th_1.textContent = "Score";
+// th_1.textContent = "Score";
 tr_0.appendChild(th_1);
 // append div to form_2
 var div_2 = document.createElement("div");
@@ -488,11 +519,15 @@ button_1.addEventListener("click", function () {
   button_0.style.display = "none";
   // turn value of input_0 into a variable, then json stringify it with score and set it to local storage
   var initials = input_0.value;
+  console.log(initials + " " + score);
+
   var scoreObject = {
     initials: initials,
     score: score,
   };
+  console.log(scoreObject);
   var scoreObjectString = JSON.stringify(scoreObject);
+  console.log(scoreObjectString);
   localStorage.setItem("scoreObject", scoreObjectString);
 
   // create a variable that gets the value of local storage and json parse it
@@ -534,7 +569,7 @@ button_6.addEventListener("click", function () {
   // clear local storage
   localStorage.clear();
   // clear rows of table_0 element but not the first row
-  table_0.innerHTML = "<tr><th>Initials</th><th>Score</th></tr>";
+  table_0.innerHTML = "<tr><th>line 572Initials</th><th>Score</th></tr>";
 });
 button_7.addEventListener("click", function () {
   time = 60;
