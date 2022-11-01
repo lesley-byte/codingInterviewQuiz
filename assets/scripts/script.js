@@ -2,8 +2,9 @@ var scoreObjectString = localStorage.getItem("scoreObject");
 
   var score = 0;
   var initials = "";
- 
-var scoreObject = JSON.parse(scoreObjectString);
+  try {
+  scoreObject = JSON.parse(scoreObjectString);
+  var scoreObject = JSON.parse(scoreObjectString);
   // create a variable that gets the value of the scoreObject's score key
   var scoreObjectScore = scoreObject.score;
   // create a variable that gets the value of the scoreObject's initials key
@@ -17,6 +18,11 @@ var scoreObject = JSON.parse(scoreObjectString);
   // create a variable that gets the value of the scoreObject's initials key and converts it to a string and adds a space
   var scoreObjectInitialsStringSpace = scoreObjectInitialsString + " ";
   // add the value of the scoreObject's initials key and score key to the next row of table_0 element while keeping the previous rows. the initial and score should be on the same row but on different columns
+  } catch(error) {
+  // if there is no scoreObjectString, then set the scoreObjectScoreStringSpace and scoreObjectInitialsStringSpace to empty strings
+  var scoreObjectScoreStringSpace = "";
+  var scoreObjectInitialsStringSpace = "";
+  } 
 
 
 
@@ -569,7 +575,7 @@ button_6.addEventListener("click", function () {
   // clear local storage
   localStorage.clear();
   // clear rows of table_0 element but not the first row
-  table_0.innerHTML = "<tr><th>line 572Initials</th><th>Score</th></tr>";
+  table_0.innerHTML = "<tr><th>Initials</th><th>Score</th></tr>";
 });
 button_7.addEventListener("click", function () {
   time = 60;
