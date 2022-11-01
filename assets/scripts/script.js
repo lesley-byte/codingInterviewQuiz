@@ -179,7 +179,7 @@ table_0.setAttribute(
   "style",
   "display: flex; flex-direction: column; align-items: center; width: 100%; min-height: 40vh;"
 );
-table_0.innerHTML = "<tr><th>Previous Saves: Initials</th><th>Score</th></tr>";
+table_0.innerHTML = "<tr><th>Initials</th><th>Score</th></tr>";
 table_0.innerHTML +=
 "<tr><td>" +
 scoreObjectInitialsStringSpace +
